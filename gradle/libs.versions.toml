@@ -1,0 +1,12 @@
+# Reference: https://docs.gradle.org/current/userguide/platforms.html#sub:conventional-dependencies-toml
+[versions]
+kotlin = "1.8.21" # https://kotlinlang.org/docs/releases.html#release-detail
+springBoot = "3.1.2" # https://github.com/spring-projects/spring-boot/releases
+kotlinter = "3.14.0" # https://kotlinlang.org/docs/releases.html#release-details
+
+[libraries]
+springBoot = { module = "org.springframework.boot:spring-boot", version.ref = "springBoot" }
+
+[plugins]
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

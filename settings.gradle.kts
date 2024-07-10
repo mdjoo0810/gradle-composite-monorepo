@@ -1,12 +1,12 @@
 rootProject.name = "monorepo-gradle"
 
-def projectDirs = [
-        'shared',
-        'services',
-]
+val projectDirs = listOf("services", "shared")
 
-projectDirs.each {
-    file(it).eachDir { dir ->
-        includeBuild dir
+projectDirs.forEach { dir ->
+    file(dir).listFiles()?.forEach { subDir ->
+        if (subDir.isDirectory) {
+            println(subDir)
+            includeBuild(subDir)
+        }
     }
 }

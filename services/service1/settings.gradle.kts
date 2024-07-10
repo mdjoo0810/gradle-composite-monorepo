@@ -1,3 +1,8 @@
+rootProject.name = "service1"
+
+includeBuild("../../shared/lib1")
+includeBuild("../../shared/lib2")
+
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
